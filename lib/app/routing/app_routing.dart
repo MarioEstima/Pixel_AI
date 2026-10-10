@@ -1,9 +1,12 @@
-// Router principal da aplicação PixelAI: gere a navegação entre Onboarding e Home.
+// Router principal da aplicação PixelAI: gere a navegação entre Onboarding, Home, AI Tools, Editor e Gallery.
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pixel_ai/features/home/presentation/home_screen.dart';
 import 'package:pixel_ai/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:pixel_ai/features/ai_tools/presentation/ai_tools_screen.dart';
+import 'package:pixel_ai/features/editor/presentation/editor_screen.dart';
+import 'package:pixel_ai/features/gallery/presentation/gallery_screen.dart';
 import 'package:pixel_ai/core/storage/local_storage.dart';
 
 import 'route_names.dart';
@@ -55,6 +58,22 @@ class AppRouter {
       GoRoute(
         path: RouteNames.home,
         builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        path: RouteNames.aiTools,
+        builder: (context, state) => const AiToolsScreen(),
+      ),
+      GoRoute(
+        path: RouteNames.editor,
+        // `state.extra` pode ser um EditorConfig, um simples texto ou nulo:
+        // EditorConfig.fromExtra garante sempre uma configuração válida.
+        builder: (context, state) => EditorScreen(
+          config: EditorConfig.fromExtra(state.extra),
+        ),
+      ),
+      GoRoute(
+        path: RouteNames.gallery,
+        builder: (context, state) => const GalleryScreen(),
       ),
     ],
   );
