@@ -2,7 +2,7 @@
 
 Aplicação Flutter de edição de fotografias com inteligência artificial. O projeto
 está focado na experiência de utilizador: onboarding, catálogo de modelos de
-edicao, ferramentas de IA, editor de fotografia e galeria de resultados, com
+edição, ferramentas de IA, editor de fotografia e galeria de resultados, com
 navegação completa entre ecrãs através do GoRouter.
 
 A interface é escura e segue a identidade visual definida em `AppColors`.
@@ -11,7 +11,7 @@ A interface é escura e segue a identidade visual definida em `AppColors`.
 
 ## Funcionalidades
 
-- Onboarding introducao com estado guardado localmente (aparece apenas na primeira utilização).
+- Onboarding introdutório com estado guardado localmente (aparece apenas na primeira utilização).
 - Home com grelha de modelos de edição e acesso ao Editor.
 - AI Tools com oito ferramentas de IA que abrem o Editor já configurado.
 - Editor com pré-visualização da fotografia, ferramentas de máscara, controlos
@@ -19,6 +19,30 @@ A interface é escura e segue a identidade visual definida em `AppColors`.
 - Gallery com estado vazio, apresentação dos itens guardados na sessão,
   detalhe do item e reabertura no Editor.
 - Navegação de regresso consistente em todos os ecrãs.
+
+---
+
+## Capturas de ecrã
+
+**Onboarding**
+
+<img src="assets/screenshots/01-onboarding.png" width="260" alt="Ecrã de onboarding do PixelAI">
+
+**Home**
+
+<img src="assets/screenshots/02-home.png" width="260" alt="Home do PixelAI com o menu de atalhos">
+
+**AI Tools**
+
+<img src="assets/screenshots/03-ai-tools.png" width="260" alt="Ecrã AI Tools com as oito ferramentas">
+
+**Editor — ferramenta de IA selecionada (AI Portrait)**
+
+<img src="assets/screenshots/04-editor-ai-portrait.png" width="260" alt="Editor com os controlos da ferramenta AI Portrait">
+
+**Editor — aberto a partir de um modelo da Home (Retrato IA)**
+
+<img src="assets/screenshots/05-editor-modelo-home.png" width="260" alt="Editor aberto a partir de um modelo da Home">
 
 ---
 
@@ -154,6 +178,10 @@ lib/
         ├── gallery_provider.dart   # Itens guardados na sessão
         ├── presentation/gallery_screen.dart
         └── widgets/                # EditedGalleryCard
+assets/
+├── images/                         # Imagens dos ecrãs (onboarding e cartões)
+├── models/                         # Imagem de exemplo de modelos
+└── screenshots/                    # Capturas usadas neste README
 test/
 ├── widget_test.dart                # Arranque da aplicação
 └── navigation_flow_test.dart       # Fluxos de navegação
